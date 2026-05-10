@@ -4,6 +4,11 @@
  * work well for content-centric websites.
  */
 
+/* Font Awesome */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/solid.min.js);
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
@@ -15,6 +20,11 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-background-color: linear-gradient(180deg, rgba(207, 246, 232, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  --ifm-footer-background-color: transparent;
+  --bg: url(/img/bg_light.svg);
+  --bg-size: 20%;
+  --bg-pos: bottom right 5px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,9 +37,32 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-color: linear-gradient(180deg, rgba(33, 79, 69, 1) 0%, rgba(61, 29, 5, 1) 100%);
+  --ifm-footer-background-color: transparent;
+  --bg: url(/img/bg_dark.svg);
+  --bg-size: 30%;
+  --bg-pos: bottom right -10%;
 }
 
-/* Font Awesome */
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/solid.min.js);
+#__docusaurus::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  background: var(--ifm-background-color);
+}
+
+@media (width >= 64rem) {
+  #__docusaurus::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    background-image: var(--bg);
+    background-repeat: no-repeat;
+    background-size: var(--bg-size);
+    background-position: var(--bg-pos);
+  }
+}
