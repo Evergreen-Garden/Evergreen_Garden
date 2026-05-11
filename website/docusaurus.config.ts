@@ -95,6 +95,12 @@ const config: Config = {
           label: 'Rules',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'creatureProfilesSidebar',
+          position: 'left',
+          label: 'Creature profiles',
+        },
+        {
           href: 'https://discord.gg/evergreengarden',
           position: 'right',
           className: 'fa-brands fa-discord fa-lg',
