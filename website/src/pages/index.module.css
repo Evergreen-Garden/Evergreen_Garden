@@ -1,23 +1,194 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+/* ── Hero ──────────────────────────────────────────────────────────────── */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
   position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
+
+  /* Swap in a real screenshot: --hero-bg: url('/img/hero.jpg') */
+  --hero-bg: none;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+/* Dark gradient overlay — visible only when a background image is set */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 4rem 1.5rem;
+}
+
+.heroLogo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.heroTitle {
+  font-size: 3.25rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--ifm-heading-color);
+}
+
+.heroTagline {
+  font-size: 1.35rem;
+  margin: 0;
+  opacity: 0.9;
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+
+  .heroTagline {
+    font-size: 1.1rem;
+  }
+}
+
+/* ── How to Join ───────────────────────────────────────────────────────── */
+
+.howToJoin {
+  padding: 5rem 0;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.75;
+  margin-bottom: 3rem;
+}
+
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.stepCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  background: var(--ifm-card-background-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepBody {
+  flex: 1;
+}
+
+.stepBody strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.stepBody p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+/* ── Discord CTA ───────────────────────────────────────────────────────── */
+
+.discordCta {
+  padding: 4rem 0 5rem;
+}
+
+.discordCard {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  background: var(--ifm-card-background-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.discordIcon {
+  font-size: 3rem;
+  color: #5865f2;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.discordTitle {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.discordText {
+  opacity: 0.8;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.discordButton {
+  background: #5865f2;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+}
+
+.discordButton:hover {
+  background: #4752c4;
+  color: #fff;
 }

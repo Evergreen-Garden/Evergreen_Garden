@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Evergreen Garden',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'A welcoming home for dinosaur survivors',
   favicon: 'img/logo.webp',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
