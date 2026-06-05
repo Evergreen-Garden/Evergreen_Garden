@@ -42,7 +42,7 @@ function HeroSection(): ReactNode {
       <div className={styles.heroOverlay} />
       <div className={clsx('container', styles.heroContent)}>
         <img
-          src="/img/logo.webp"
+          src="/Evergreen_Garden/img/logo.webp"
           alt="Evergreen Garden logo"
           className={styles.heroLogo}
         />
